@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Joke Factory</h1>
+    </header>
+    <main>
+      <section>
+        <menu>
+          <li>
+            <h2>Category</h2>
+            <div>
+              <input type="checkbox" id="default-category-value" name="defaultCategoryValue">
+              <label for="default-category-value">All</label>
+            </div>
+          </li>
+          <li>
+            <h2>Blacklist</h2>
+            <div>
+              <input type="checkbox" id="default-blacklist-value" name="defaultBlacklistValue">
+              <label for="default-blacklist-value">None</label>
+            </div>
+          </li>
+          <li>
+            <h2>Language</h2>
+            <div>
+              <input type="checkbox" id="default-language-value" name="defaultLanguageValue">
+              <label for="default-language-value">English</label>
+            </div>
+          </li>
+        </menu>
+        <div>
+          <figure>
+            <img src="./images/categories/christmas.png" alt="Santa hat">
+            <h3>Christmas</h3>
+          </figure>
+          <figure>
+            <img src="./images/categories/random.png" alt="question box">
+            <h3>Misc</h3>
+          </figure>
+          <figure>
+            <img src="./images/categories/programming.png" alt="laptop">
+            <h3>Programming</h3>
+          </figure>
+          <figure>
+            <img src="./images/categories/dark.png" alt="skull">
+            <h3>Dark</h3>
+          </figure>
+          <figure>
+            <img src="./images/categories/pun" alt="joyful emoji">
+            <h3>Pun</h3>
+          </figure>
+          <figure>
+            <img src="./images/categories/spooky.png" alt="spooky pumpkin">
+            <h3>Spooky</h3>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <form action="">
+          <div id="jokes-criteria">
+            <div>
+              <label for="jokes-search-input">Jokes containing...</label>
+              <input type="text" id="jokes-search-input" name="jokesSearchInput">
+            </div>
+            <div>
+              <label for="jokes-count-input">How many jokes?</label>
+              <input type="text" id="jokes-count-input" name="jokesCountInput">
+            </div>
+            <div>
+              <label for="jokes-available-input">Jokes available</label>
+              <input type="text" id="jokes-available-input" name="jokesAvailableInput">
+            </div>
+          </div>
+          <div id="get-jokes-criteria">
+            <input type="submit" value="Get Joke">
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
