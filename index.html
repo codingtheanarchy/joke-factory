@@ -4,7 +4,10 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -16,49 +19,61 @@
           <li>
             <h2>Category</h2>
             <div>
-              <input type="checkbox" id="default-category-value" name="defaultCategoryValue">
+              <div class="checkbox-placeholder checkbox-category">
+                <input type="checkbox" id="default-category-value" name="defaultCategoryValue">
+              </div>
               <label for="default-category-value">All</label>
             </div>
           </li>
           <li>
             <h2>Blacklist</h2>
             <div>
-              <input type="checkbox" id="default-blacklist-value" name="defaultBlacklistValue">
+              <div class="checkbox-placeholder checkbox-blacklist">
+                <input type="checkbox" id="default-blacklist-value" name="defaultBlacklistValue">
+              </div>
               <label for="default-blacklist-value">None</label>
             </div>
           </li>
           <li>
             <h2>Language</h2>
             <div>
-              <input type="checkbox" id="default-language-value" name="defaultLanguageValue">
+              <div class="checkbox-placeholder checkbox-language">
+                <input type="checkbox" id="default-language-value" name="defaultLanguageValue">
+              </div> 
               <label for="default-language-value">English</label>
             </div>
           </li>
         </menu>
-        <div>
+        <div id="figures-box">
           <figure>
             <img src="./images/categories/christmas.png" alt="Santa hat">
             <h3>Christmas</h3>
+            <div class=""></div>
           </figure>
           <figure>
             <img src="./images/categories/random.png" alt="question box">
             <h3>Misc</h3>
+            <div class=""></div>
           </figure>
           <figure>
             <img src="./images/categories/programming.png" alt="laptop">
             <h3>Programming</h3>
+            <div class=""></div>
           </figure>
           <figure>
             <img src="./images/categories/dark.png" alt="skull">
             <h3>Dark</h3>
+            <div class=""></div>
           </figure>
           <figure>
-            <img src="./images/categories/pun" alt="joyful emoji">
+            <img src="./images/categories/pun.png" alt="joyful emoji">
             <h3>Pun</h3>
+            <div class=""></div>
           </figure>
           <figure>
             <img src="./images/categories/spooky.png" alt="spooky pumpkin">
             <h3>Spooky</h3>
+            <div class=""></div>
           </figure>
         </div>
       </section>
