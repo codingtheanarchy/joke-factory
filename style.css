@@ -91,27 +91,34 @@ menu li label {
 
 #figures-box {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   background-color: #74b9ff;
+  border: solid 5px #74b9ff 
 }
 
 #figures-box figure {
   position: relative;
   flex-basis: 150px;
   flex-grow: 1;
-  background-color: #0984e3
+  background-color: #0984e3;
+  padding: 20px;
 }
 
 
 #figures-box figure img { 
+  display: block;
+  margin: 0 auto;
   width: 100%;
   /* Dont grow beyond the intrinsic value */
   max-width: 128px
+  
 }
 
 #figures-box figure h3 {
   text-align: center;
-  color: #ffeaa7
+  color: #ffeaa7;
+  margin-top: 7px 
 } 
 
 #figures-box figure div.overlay {
