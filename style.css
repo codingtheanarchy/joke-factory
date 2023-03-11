@@ -1,11 +1,20 @@
+@font-face {
+  src: url('./fonts/Symbols-2048-em Nerd Font Complete.ttf');
+  font-family: 'Nerd Fonts';
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
 }
 
 body {
-  background-color: #00b894
+  background-color: #00b894;
 }
 
 header {
@@ -13,34 +22,43 @@ header {
   color: #fab1a0;
   height: 60px;
   padding-top: 10px;
-  text-align:center
+  text-align: center;
+}
+
+main {
+  margin: 0 10px
+}
+
+section {
+  margin: 20px 0;
 }
 
 menu {
   display: flex;
-  gap: 45px; 
+  flex-wrap: wrap; 
+  gap: 45px;
   list-style: none;
 }
 
-menu li h2{
-  font-family: "Mitr", sans-serif;  
+menu li h2 {
+  font-size: 24px;
+  font-family: 'Mitr', sans-serif;
   font-weight: 700;
-  text-shadow: 3px 1px 2px black
+  text-shadow: 3px 1px 2px black;
 }
 
 /*category title*/
 menu li:nth-child(1) h2 {
-  color: #ffeaa7
+  color: #ffeaa7;
 }
 /*category title*/
 menu li:nth-child(2) h2 {
-  color: #ff7675
+  color: #ff7675;
 }
 /*category title*/
 menu li:nth-child(3) h2 {
-  color: #a29bfe
+  color: #a29bfe;
 }
-
 
 div.checkbox-placeholder {
   display: inline-block;
@@ -49,52 +67,51 @@ div.checkbox-placeholder {
   width: 30px;
 }
 
-div.checkbox-placeholder::before{
-  content: "";
+div.checkbox-placeholder::before {
+  content: '';
   position: absolute;
   left: 0;
   height: 30px;
   width: 30px;
-  z-index: -1
+  z-index: -1;
 }
 
-div.checkbox-category::before{
-  background-color: #ebbc27
+div.checkbox-category::before {
+  background-color: #ebbc27;
 }
 
-div.checkbox-blacklist::before{
-  background-color: #ff4000
+div.checkbox-blacklist::before {
+  background-color: #ff4000;
 }
 
-div.checkbox-language::before{
-  background-color: #665dde
+div.checkbox-language::before {
+  background-color: #665dde;
 }
 
-menu li input[type="checkbox"] {
+menu li input[type='checkbox'] {
   width: 30px;
   height: 30px;
   opacity: 0.5;
+  cursor: pointer
 }
 
-
-menu li input[type="checkbox"]:checked {
-  outline: 2px solid white
+menu li input[type='checkbox']:checked {
+  outline: 2px solid white;
 }
 
 menu li label {
-  font-family: "Mitr", sans-serif;  
+  font-family: 'Mitr', sans-serif;
   font-size: 20px;
   font-weight: bold;
-  color: whitesmoke
+  color: whitesmoke;
 }
-
 
 #figures-box {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   background-color: #74b9ff;
-  border: solid 5px #74b9ff 
+  border: solid 5px #74b9ff;
 }
 
 #figures-box figure {
@@ -103,23 +120,22 @@ menu li label {
   flex-grow: 1;
   background-color: #0984e3;
   padding: 20px;
+  cursor: pointer
 }
 
-
-#figures-box figure img { 
+#figures-box figure img {
   display: block;
   margin: 0 auto;
   width: 100%;
   /* Dont grow beyond the intrinsic value */
-  max-width: 128px
-  
+  max-width: 128px;
 }
 
 #figures-box figure h3 {
   text-align: center;
   color: #ffeaa7;
-  margin-top: 7px 
-} 
+  margin-top: 7px;
+}
 
 #figures-box figure div.overlay {
   position: absolute;
@@ -128,14 +144,103 @@ menu li label {
   width: 100%;
   height: 100%;
   background-color: #74b9ff;
-  opacity: 70% 
+  opacity: 70%;
 }
 
 #jokes-criteria {
   display: flex;
+  justify-content: flex-start;
+  gap: 45px;
+}
+
+#jokes-criteria div {
+  flex-basis: 300px;
+}
+
+#jokes-criteria label {
+  display: block;
+  font-family: 'Mitr', sans-serif;
+  font-weight: 700;
+  color: #d4ecff;
+  font-size: 24px;
+  text-shadow: 2px 1px 5px black;
+}
+
+#jokes-criteria input[type='text'] {
+  height: 45px;
+  font-family: 'Mitr', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  background-color: #81ecec;
+  color: #2d3436;
 }
 
 
-#jokes-criteria label {
-  display: block
+#jokes-criteria div.search-icon-box {
+  position: relative;
+}
+
+#jokes-criteria div.search-icon-box::before {
+  content: '\f002';
+  font-family: 'Nerd Fonts';
+  font-size: 35px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+#jokes-search-input {
+  width: 100%;
+  padding-left: 55px;
+}
+
+#jokes-count-input,
+#jokes-available-input {
+  width: 50%;
+  text-align: center;
+}
+
+
+#get-jokes-criteria input {
+  display: block;
+  margin: 60px auto 15px;
+  width: 450px;
+  height: 75px; 
+  color: #ffffff;
+  background-color: #6c5ce7;
+  border-radius: 15px;
+  font-family: "Mitr";
+  font-weight: 700;
+  font-size: 45px;
+  cursor: pointer
+}
+
+@media (width < 745px) {
+  #jokes-criteria label {
+    font-size: 18px;
+  }
+}
+
+@media (width < 580px) {
+  menu {
+    justify-content: space-around;
+    gap: 5px
+  }
+
+  #jokes-criteria {
+    flex-wrap: wrap;
+    gap: 10px 
+  }
+
+  #jokes-criteria div:nth-child(2),
+  #jokes-criteria div:nth-child(3) {
+    flex-basis: 150px;
+    flex-grow: 1
+  }
+
+  #get-jokes-criteria input {
+    width: 80%
+  }
 }
