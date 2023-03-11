@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <h1>Joke Factory</h1>
+      <h1 id="my-title" class="main-title">Joke Factory</h1>
     </header>
     <main>
       <section>
@@ -82,7 +82,9 @@
           <div id="jokes-criteria">
             <div>
               <label for="jokes-search-input">Jokes containing...</label>
-              <input type="text" id="jokes-search-input" name="jokesSearchInput">
+              <div class="search-icon-box">
+                <input type="text" id="jokes-search-input" name="jokesSearchInput">
+              </div>
             </div>
             <div>
               <label for="jokes-count-input">How many jokes?</label>
