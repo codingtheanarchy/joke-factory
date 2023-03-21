@@ -1,35 +1,36 @@
-// 1. Get categories and blacklist flags
-const jokeApiInfo = fetch("https://v2.jokeapi.dev/info")
+import getJokeInfo from "./modules/jokeInfo.js"
+const figuresBox = document.querySelector("#figures-box") 
 
-// Handle the fufilled promise, whos value will be a Response object 
-jokeApiInfo
-  .then(function(response){
-    // Reads the bodys
-    return response.json()
-  })
-  .then(function(jokeInfo){
-    // the joke information 
-    
-    // Store categories, blacklist flags, and languages
-    const { categories, flags, safeJokes:languageObjects } = jokeInfo.jokes 
-  
+getJokeInfo()
+  .then(function(jokeInfo) {
+    console.log(jokeInfo)
+    // 1. We need to display the supported categories 
+    jokeInfo.categories.forEach(function(element){
+      if(element === "Any") {
+        return null
+      }
+      console.log(element)
+      // create a figure element
+      const figure = document.createElement("figure") 
+      // create 3 children elements, which will be contained in figure
+      const img = document.createElement("img");
+      const h3 = document.createElement("h3");
+      const div = document.createElement("div");
 
-    // language table
-    const languageTable = {
-      en: "English",
-      cs: "Czech",
-      de: "German",
-      es: "Spanish",
-      fr: "French",
-      pt: "Portuguese"
-    }
+      // Add atributes and/or content to the children 
+      img.src = `./images/categories/${element}.png` 
+      h3.textContent = `${element}`  
 
-    // Contains the supported languages 
-    const languages = languageObjects.map(function(element, index){
-        return languageTable[element.lang]
+      // Insert the 3 children elements into figure
+      figure.insertAdjacentElement("beforeend", img)
+      figure.insertAdjacentElement("beforeend", h3)
+      figure.insertAdjacentElement("beforeend", div)
+
+      // Insert the figure into the #figures-box
+      figuresBox.insertAdjacentElement("beforeend", figure)
+      
     })
+  })
 
-    
-  }) 
-
+// jokeInfo.then(results => console.log(results))
 
